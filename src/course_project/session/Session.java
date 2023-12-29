@@ -30,7 +30,7 @@ public class Session {
     private void setAccessToken(){
 
         String symbols = "abcdefghijklmnopqrstuvwxyz0123456789";
-        this.accessToken = new Random().ints(16, 0, symbols.length())
+        this.accessToken = new Random().ints(10, 0, symbols.length())
                 .mapToObj(symbols::charAt)
                 .map(Object::toString)
                 .collect(Collectors.joining());
