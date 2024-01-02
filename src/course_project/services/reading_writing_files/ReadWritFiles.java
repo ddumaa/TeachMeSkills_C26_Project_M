@@ -1,6 +1,7 @@
 package course_project.services.reading_writing_files;
 
 import course_project.packages.logger.Logging;
+import course_project.services.validition.Validator;
 
 import java.io.*;
 import java.util.Date;
@@ -15,18 +16,19 @@ public class ReadWritFiles {
             if (fileEntry.isDirectory()) {
                 listFilesForFolder(fileEntry);
             } else {
-                readingWritingFiles(fileEntry);
+                Logging.EXECUTION_LOG(new Date(),"Start reading file " + fileEntry.getName() + "\n");
+                Validator.path = String.valueOf(fileEntry);
+                Validator.validationNameDocuments(fileEntry.getName());
             }
         }
     }
     public static  void readingWritingFiles(File path){
-        Logging.EXECUTION_LOG(new Date(),"Start reading file\n");
         try(BufferedReader reader = new BufferedReader(new FileReader(path))){
+            Validator.validationNameDocuments(String.valueOf(path));
             String line = reader.readLine();
             while (line != null) {
                 //TODO сделать валидатор под задачу
                 System.out.println(line);
-                //Validator.validationNameDocuments(line);
                 line = reader.readLine();
             }
         } catch (FileNotFoundException e) {
