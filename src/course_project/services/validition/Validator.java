@@ -22,7 +22,6 @@ public class Validator {
                 Path sourcePath = sourceFile.toPath();
                 Path destinationPath = new File(destinationFolder, sourceFile.getName()).toPath();
                 Files.move(sourcePath, destinationPath);
-                System.out.println("Файл успешно перемещен.");
             } catch (IOException e) {
                 e.printStackTrace();
             }
