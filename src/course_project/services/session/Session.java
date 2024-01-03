@@ -1,4 +1,4 @@
-package course_project.session;
+package course_project.services.session;
 
 import java.util.Calendar;
 import java.util.Date;

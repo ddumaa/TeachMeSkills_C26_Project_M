@@ -1,4 +1,4 @@
-package course_project.coder;
+package course_project.services.coder;
 
 import java.util.Base64;
 import java.util.Random;
@@ -22,7 +22,7 @@ public class Coder {
             decodedBytes = Arrays.copyOfRange(decodedBytes, 10, decodedBytes.length - 10);
         } else {
             System.out.println("недостаточно байтов для корректного выделения подстроки.");
-            return "";
+            //return "";
         }
         String decoded = new String(decodedBytes);
         return decoded;
