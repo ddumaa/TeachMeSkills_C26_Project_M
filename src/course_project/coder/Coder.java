@@ -3,6 +3,7 @@ package course_project.coder;
 import java.util.Base64;
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.Arrays;
 
 public class Coder {
 
@@ -16,8 +17,14 @@ public class Coder {
 
     public static String decode(String input){
 
-        byte[] decodedBytes = Base64.getDecoder().decode(input.substring(10));
-        String decoded = new String(decodedBytes);  //TODO дописать декодер для расшифровки соли
+        byte[] decodedBytes = Base64.getDecoder().decode(input);
+        if (decodedBytes.length >= 20){
+            decodedBytes = Arrays.copyOfRange(decodedBytes, 10, decodedBytes.length - 10);
+        } else {
+            System.out.println("недостаточно байтов для корректного выделения подстроки.");
+            return "";
+        }
+        String decoded = new String(decodedBytes);
         return decoded;
 
     }
@@ -30,7 +37,7 @@ public class Coder {
                                        .map(Object::toString)
                                        .collect(Collectors.joining());
 
-        String result = salt + input;          //TODO добавить более надеждую соль
+        String result = salt + input + salt;
         return result;
 
     }
