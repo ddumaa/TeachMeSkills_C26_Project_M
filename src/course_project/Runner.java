@@ -9,8 +9,7 @@ import java.util.Scanner;
 public class Runner {
     public static void main(String[] args) {
         Logging.EXECUTION_LOG(new Date(),"Program launch\n");
-        Scanner scanner = new Scanner(System.in);
-        String pathFolder = scanner.nextLine();
-        ReadWritFiles.readingFolders(pathFolder);
+        ReadWritFiles.readingFolders();
+        Logging.EXECUTION_LOG(new Date(),"Program end\n");
     }
 }

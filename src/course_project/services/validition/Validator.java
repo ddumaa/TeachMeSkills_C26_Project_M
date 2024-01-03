@@ -13,7 +13,8 @@ public class Validator {
     public static double sumInvoice = 0;
     public static double sumBill = 0;
 
-    //метод проверки формата файла и его года, вызов метода считывания файла и получения возвращаемого значения и вызов метода записи в фаил
+    //метод проверки формата файла и его года, вызов метода считывания файла
+    // и получения возвращаемого значения и вызов метода записи в фаил
     public static void validationNameDocuments (String nameFile, String path) {
         Logging.EXECUTION_LOG(new Date(),"Document verification -> " + nameFile + "\n");
         if (nameFile.endsWith(Consts.fileExtension) && nameFile.contains("2023")) {
@@ -27,6 +28,19 @@ public class Validator {
             } else if (nameFile.toLowerCase().contains("bill")){
                 double a = ReadWritFiles.readingFiles(path);
                 sumBill += a;
+            } else {
+                Logging.EXECUTION_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
+                //невалидные файлы перемещаются - удалить комментирование метода перед испольхованием (закоментированно что-бы не пермещать каждый раз файлы)
+            /*File sourceFile = new File(path);
+            File destinationFolder = new File(Consts.DESTINATION_FOLDER);
+
+            try {
+                Path sourcePath = sourceFile.toPath();
+                Path destinationPath = new File(destinationFolder, sourceFile.getName()).toPath();
+                Files.move(sourcePath, destinationPath);
+            } catch (IOException e) {
+                Logging.ERROR_LOG(new Date(),"Error moving file" + nameFile + "\n");
+            }*/
             }
             ReadWritFiles.writingFiles("- total turnover for the year: " + Consts.TWO_CHARACTERS_AFTER_DOT(sumOrder + sumInvoice + sumBill),
                     "- total turnover for all invoices: "+ Consts.TWO_CHARACTERS_AFTER_DOT(sumInvoice),

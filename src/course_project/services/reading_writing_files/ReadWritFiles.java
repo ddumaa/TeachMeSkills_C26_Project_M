@@ -6,20 +6,31 @@ import course_project.services.validition.Validator;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Date;
+import java.util.Scanner;
 
 public class ReadWritFiles {
     //метод получения пути к папке и передачи его дальше
-    public static void readingFolders(String myFolder) {
-        Logging.EXECUTION_LOG(new Date(), "Getting folder path\n");
-        File folder = new File(myFolder);
-        if (folder.isDirectory()) {
-            Logging.EXECUTION_LOG(new Date(), "Path received -> " + myFolder + "\n");
-            listFilesForFolder(folder);
-        } else {
-            Logging.EXECUTION_LOG(new Date(), "Invalid folder path: " + myFolder + "\n");
+    public static void readingFolders() {
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter the path to the folder");
+            String pathFolderString;
+            pathFolderString = scanner.nextLine();
+            Path pathFolder = Paths.get(pathFolderString);
+            Logging.EXECUTION_LOG(new Date(), "Getting folder path\n");
+            if (Files.exists(pathFolder) && Files.isDirectory(pathFolder)) {
+                Logging.EXECUTION_LOG(new Date(), "Path received -> " + pathFolder + "\n");
+                File folder = new File(pathFolderString);
+                listFilesForFolder(folder);
+                break;
+            } else {
+                System.out.println("invalid folder path\n");
+                Logging.EXECUTION_LOG(new Date(), "Invalid folder path: " + pathFolder + "\n");
+            }
         }
     }
 
@@ -59,9 +70,9 @@ public class ReadWritFiles {
         try {
             String message = line + "\n" + line2 + "\n" + line3 + "\n" + line4;
             Files.write(Paths.get(Consts.STATISTIC_WRIT_PATH), message.getBytes(), StandardOpenOption.WRITE);
-            //Logging.EXECUTION_LOG(new Date(), "data was successfully written along the path -> " + Consts.STATISTIC_WRIT_PATH);
         } catch (IOException e) {
             Logging.ERROR_LOG(new Date(), e.getMessage());
         }
+        //Logging.EXECUTION_LOG(new Date(), "Data was successfully written along the path -> " + Consts.STATISTIC_WRIT_PATH);
     }
 }

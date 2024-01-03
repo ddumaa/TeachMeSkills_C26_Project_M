@@ -1,4 +1,4 @@
-- total turnover for the year: 2187736.65
+- total turnover for the year: 1893152.55
 - total turnover for all invoices: 9651.9
 - total turnover for all orders: 17801.35
-- total turnover for all orders: 2160283.4
+- total turnover for all orders: 1865699.3
