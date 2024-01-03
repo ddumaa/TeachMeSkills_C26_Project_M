@@ -69,17 +69,14 @@ public class Validator {
             if (line.toUpperCase().contains("EURO")){
                 Logging.EXECUTION_LOG(new Date(),"EURO currency\n");
                 double euro = NumberSearch.searchAmount(line);
-                double dollar = CurrencyConverter.convertCurrency("EURO", euro);
-                return dollar;
+                return CurrencyConverter.convertCurrency("EURO", euro);
             } else if (line.toUpperCase().contains("GBR")) {
                 Logging.EXECUTION_LOG(new Date(),"GBR currency\n");
                 double gbr = NumberSearch.searchAmount(line);
-                double dollar = CurrencyConverter.convertCurrency("GBR", gbr);
-                return dollar;
+                return CurrencyConverter.convertCurrency("GBR", gbr);
             } else {
                 Logging.EXECUTION_LOG(new Date(),"USD currency\n");
-                double dollar = NumberSearch.searchAmount(line);
-                return dollar;
+                return NumberSearch.searchAmount(line);
             }
         }
         return 0;
