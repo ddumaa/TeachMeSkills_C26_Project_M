@@ -10,8 +10,14 @@ public interface Consts {
     //пути к невалидным файлам для перемещения
     String DESTINATION_FOLDER = "C:\\Users\\Guest\\IdeaProjects\\TeachMeSkills_C26_Project_M\\src\\course_project\\documents\\invalid_documents";
 
+    //путь к записи статистики
+    String STATISTIC_WRIT_PATH = "C:\\Users\\Guest\\IdeaProjects\\TeachMeSkills_C26_Project_M\\src\\course_project\\statistics\\Statistics.txt";
 
-
+    //расширение читаемых файлов
     String fileExtension = ".txt";
 
+    static double TWO_CHARACTERS_AFTER_DOT(double value){
+        double scaledValue = Math.round(value * 100.0) / 100.0;
+        return scaledValue;
+    }
 }
