@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class ReadWritFiles {
-    //метод получения пути к папке и передачи его дальше
+    //метод получения пути к папке, проверке его на существование и передачи его на считывание
     public static void readingFolders() {
         while (true) {
             Scanner scanner = new Scanner(System.in);
