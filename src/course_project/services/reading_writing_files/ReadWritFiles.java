@@ -15,8 +15,12 @@ public class ReadWritFiles {
     public static void readingFolders(String myFolder) {
         Logging.EXECUTION_LOG(new Date(), "Getting folder path\n");
         File folder = new File(myFolder);
-        Logging.EXECUTION_LOG(new Date(), "Path received -> " + myFolder + "\n");
-        listFilesForFolder(folder);
+        if (folder.isDirectory()) {
+            Logging.EXECUTION_LOG(new Date(), "Path received -> " + myFolder + "\n");
+            listFilesForFolder(folder);
+        } else {
+            Logging.EXECUTION_LOG(new Date(), "Invalid folder path: " + myFolder + "\n");
+        }
     }
 
     //метод перебора папок для поиска файлов и передачи их дальше
