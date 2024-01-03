@@ -73,6 +73,5 @@ public class ReadWritFiles {
         } catch (IOException e) {
             Logging.ERROR_LOG(new Date(), e.getMessage());
         }
-        //Logging.EXECUTION_LOG(new Date(), "Data was successfully written along the path -> " + Consts.STATISTIC_WRIT_PATH);
     }
 }
