@@ -17,7 +17,6 @@ public interface Consts {
     String fileExtension = ".txt";
 
     static double TWO_CHARACTERS_AFTER_DOT(double value){
-        double scaledValue = Math.round(value * 100.0) / 100.0;
-        return scaledValue;
+        return Math.round(value * 100.0) / 100.0;
     }
 }
