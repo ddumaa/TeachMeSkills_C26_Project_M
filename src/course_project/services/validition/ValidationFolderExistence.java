@@ -1,0 +1,34 @@
+package course_project.services.validition;
+
+import course_project.packages.logger.Logging;
+import course_project.services.actions_with_files.FileParsing;
+
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Date;
+import java.util.Scanner;
+
+public class ValidationFolderExistence {
+    //метод получения пути к папке, проверке его на существование и передачи его на считывание
+    public static void checkPath() {
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter the path to the folder");
+            String pathFolderString;
+            pathFolderString = scanner.nextLine();
+            Path pathFolder = Paths.get(pathFolderString);
+            Logging.EXECUTION_LOG(new Date(), "Getting folder path\n");
+            if (Files.exists(pathFolder) && Files.isDirectory(pathFolder)) {
+                Logging.EXECUTION_LOG(new Date(), "Path received -> " + pathFolder + "\n");
+                File folder = new File(pathFolderString);
+                FileParsing.listFilesForFolder(folder);
+                break;
+            } else {
+                System.out.println("invalid folder path\n");
+                Logging.EXECUTION_LOG(new Date(), "Invalid folder path: " + pathFolder + "\n");
+            }
+        }
+    }
+}
