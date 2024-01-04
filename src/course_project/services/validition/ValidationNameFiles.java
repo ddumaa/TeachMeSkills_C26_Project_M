@@ -5,13 +5,19 @@ import course_project.packages.utils.Consts;
 import course_project.packages.utils.Variables;
 import course_project.services.actions_with_files.ReadFiles;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Date;
 
+/**
+ * Метод проверки формата файла и фильтр на год документа,
+ *     определение типа документа,
+ *     получение суммы и запись суммы.
+ *     Пермещение невалидных документов.
+ */
 public class ValidationNameFiles {
-    // Метод проверки формата файла и фильтр на год документа,
-    // определение типа документа,
-    // получение суммы и запись суммы.
-    // Пермещение невалидных документов.
     public static void validatingNameDocuments (String nameFile, String path) {
         Logging.EXECUTION_LOG(new Date(),"Document verification -> " + nameFile + "\n");
         if (nameFile.endsWith(Consts.fileExtension) && nameFile.contains("2023")) {
@@ -22,28 +28,21 @@ public class ValidationNameFiles {
                 Variables.setSumInvoice(Variables.getSumInvoice() + ReadFiles.readingFiles(path));
             } else if (nameFile.toLowerCase().contains("bill")){
                 Variables.setSumBill(Variables.getSumBill() + ReadFiles.readingFiles(path));
-            } else {
+            } else { // перемещение файлов с неподходящем именем
                 Logging.EXECUTION_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
-                //невалидные файлы перемещаются - удалить комментирование метода перед испольхованием (закоментированно что-бы не пермещать каждый раз файлы)
-            /*File sourceFile = new File(path);
+            File sourceFile = new File(path);
             File destinationFolder = new File(Consts.INVALID_FILE_NAME_PATH);
-
             try {
                 Path sourcePath = sourceFile.toPath();
                 Path destinationPath = new File(destinationFolder, sourceFile.getName()).toPath();
                 Files.move(sourcePath, destinationPath);
             } catch (IOException e) {
                 Logging.ERROR_LOG(new Date(),"Error moving file" + nameFile + "\n");
-            }*/
             }
-            /*WritFiles.writingFiles("- total turnover for the year: " + Consts.TWO_CHARACTERS_AFTER_DOT(sumOrder + sumInvoice + sumBill),
-                    "- total turnover for all invoices: "+ Consts.TWO_CHARACTERS_AFTER_DOT(sumInvoice),
-                    "- total turnover for all orders: " + Consts.TWO_CHARACTERS_AFTER_DOT(sumOrder),
-                    "- total turnover for all orders: " + Consts.TWO_CHARACTERS_AFTER_DOT(sumBill));*/
-        } else {
+            }
+        } else { //перемещение файлов с некоректным расширением
             Logging.EXECUTION_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
-            //невалидные файлы перемещаются - удалить комментирование метода перед испольхованием (закоментированно что-бы не пермещать каждый раз файлы)
-            /*File sourceFile = new File(path);
+            File sourceFile = new File(path);
             File destinationFolder = new File(Consts.INCORRECT_FILE_EXTENSION_PATH);
 
             try {
@@ -52,7 +51,7 @@ public class ValidationNameFiles {
                 Files.move(sourcePath, destinationPath);
             } catch (IOException e) {
                 Logging.ERROR_LOG(new Date(),"Error moving file" + nameFile + "\n");
-            }*/
+            }
         }
     }
 }

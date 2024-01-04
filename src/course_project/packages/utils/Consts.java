@@ -1,8 +1,7 @@
 package course_project.packages.utils;
 
 public interface Consts {
-    //путь до файлов Дмитрий, ноутбук
-    //можно делать свой путь и закоментировать неиспользованные пути
+
     //Пути к логам
     String EXECUTION_LOG_FILE = "C:\\Users\\Guest\\IdeaProjects\\TeachMeSkills_C26_Project_M\\src\\course_project\\documents\\loggi\\execution_log\\execution_log.txt";
     String ERROR_LOG_FILE = "C:\\Users\\Guest\\IdeaProjects\\TeachMeSkills_C26_Project_M\\src\\course_project\\documents\\loggi\\error_log\\error_log.txt";
@@ -18,6 +17,7 @@ public interface Consts {
     //расширение читаемых файлов
     String fileExtension = ".txt";
 
+    //метод сохранения двух знаков после точки
     static double TWO_CHARACTERS_AFTER_DOT(double value){
         return Math.round(value * 100.0) / 100.0;
     }
