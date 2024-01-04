@@ -7,7 +7,7 @@ import course_project.services.actions_with_files.ReadFiles;
 
 import java.util.Date;
 
-public class Validator {
+public class ValidationNameFiles {
     // Метод проверки формата файла и фильтр на год документа,
     // определение типа документа,
     // получение суммы и запись суммы.

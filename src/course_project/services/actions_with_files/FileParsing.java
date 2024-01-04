@@ -1,6 +1,6 @@
 package course_project.services.actions_with_files;
 
-import course_project.services.validition.Validator;
+import course_project.services.validition.ValidationNameFiles;
 
 import java.io.File;
 
@@ -11,7 +11,7 @@ public class FileParsing {
             if (fileEntry.isDirectory()) {
                 listFilesForFolder(fileEntry);
             } else {
-                Validator.validatingNameDocuments(fileEntry.getName(), String.valueOf(fileEntry));
+                ValidationNameFiles.validatingNameDocuments(fileEntry.getName(), String.valueOf(fileEntry));
             }
         }
     }
