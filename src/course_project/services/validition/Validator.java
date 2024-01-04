@@ -12,7 +12,7 @@ public class Validator {
     // определение типа документа,
     // получение суммы и запись суммы.
     // Пермещение невалидных документов.
-    public static void validationNameDocuments (String nameFile, String path) {
+    public static void validatingNameDocuments (String nameFile, String path) {
         Logging.EXECUTION_LOG(new Date(),"Document verification -> " + nameFile + "\n");
         if (nameFile.endsWith(Consts.fileExtension) && nameFile.contains("2023")) {
             Logging.EXECUTION_LOG(new Date(),"The document has been verified -> " + nameFile + "\n");

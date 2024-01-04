@@ -11,7 +11,7 @@ public class FileParsing {
             if (fileEntry.isDirectory()) {
                 listFilesForFolder(fileEntry);
             } else {
-                Validator.validationNameDocuments(fileEntry.getName(), String.valueOf(fileEntry));
+                Validator.validatingNameDocuments(fileEntry.getName(), String.valueOf(fileEntry));
             }
         }
     }
