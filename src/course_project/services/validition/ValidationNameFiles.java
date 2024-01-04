@@ -40,7 +40,7 @@ public class ValidationNameFiles {
                 Logging.ERROR_LOG(new Date(),"Error moving file" + nameFile + "\n");
             }
             }
-        } else { //перемещение файлов с некоректным расширением
+        } else { //перемещение файлов с некорректным расширением
             Logging.EXECUTION_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
             File sourceFile = new File(path);
             File destinationFolder = new File(Consts.INCORRECT_FILE_EXTENSION_PATH);
