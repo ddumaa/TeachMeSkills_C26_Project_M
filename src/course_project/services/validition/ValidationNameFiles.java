@@ -28,7 +28,7 @@ public class ValidationNameFiles {
                 Variables.setSumInvoice(Variables.getSumInvoice() + ReadFiles.readingFiles(path));
             } else if (nameFile.toLowerCase().contains("bill")){
                 Variables.setSumBill(Variables.getSumBill() + ReadFiles.readingFiles(path));
-            } else { // перемещение файлов с неподходящем именем
+            } else { // перемещение файлов с неподходящим именем
                 Logging.EXECUTION_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
             File sourceFile = new File(path);
             File destinationFolder = new File(Consts.INVALID_FILE_NAME_PATH);
