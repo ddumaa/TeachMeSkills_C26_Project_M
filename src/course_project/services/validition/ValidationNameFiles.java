@@ -26,7 +26,7 @@ public class ValidationNameFiles {
                 Logging.EXECUTION_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
                 //невалидные файлы перемещаются - удалить комментирование метода перед испольхованием (закоментированно что-бы не пермещать каждый раз файлы)
             /*File sourceFile = new File(path);
-            File destinationFolder = new File(Consts.DESTINATION_FOLDER);
+            File destinationFolder = new File(Consts.INVALID_FILE_NAME_PATH);
 
             try {
                 Path sourcePath = sourceFile.toPath();
@@ -44,7 +44,7 @@ public class ValidationNameFiles {
             Logging.EXECUTION_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
             //невалидные файлы перемещаются - удалить комментирование метода перед испольхованием (закоментированно что-бы не пермещать каждый раз файлы)
             /*File sourceFile = new File(path);
-            File destinationFolder = new File(Consts.DESTINATION_FOLDER);
+            File destinationFolder = new File(Consts.INCORRECT_FILE_EXTENSION_PATH);
 
             try {
                 Path sourcePath = sourceFile.toPath();
