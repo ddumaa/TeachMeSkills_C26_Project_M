@@ -29,7 +29,7 @@ public class ValidationNameFiles {
             } else if (nameFile.toLowerCase().contains("bill")){
                 Variables.setSumBill(Variables.getSumBill() + ReadFiles.readingFiles(path));
             } else { // перемещение файлов с неподходящим именем
-                Logging.ERROR_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
+                Logging.EXECUTION_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
             File sourceFile = new File(path);
             File destinationFolder = new File(Consts.INVALID_FILE_NAME_PATH);
             try {
@@ -42,7 +42,7 @@ public class ValidationNameFiles {
             }
             }
         } else { //перемещение файлов с некорректным расширением
-            Logging.ERROR_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
+            Logging.EXECUTION_LOG(new Date(),"Invalid file -> " + nameFile + "\n");
             File sourceFile = new File(path);
             File destinationFolder = new File(Consts.INCORRECT_FILE_EXTENSION_PATH);
             try {
