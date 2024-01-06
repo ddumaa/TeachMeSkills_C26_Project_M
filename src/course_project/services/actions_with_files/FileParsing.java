@@ -4,8 +4,10 @@ import course_project.services.validition.ValidationNameFiles;
 
 import java.io.File;
 
+/**
+ * Метод перебора папок для поиска файлов и передачи их дальше
+ */
 public class FileParsing {
-    //метод перебора папок для поиска файлов и передачи их дальше
     public static void listFilesForFolder(File folder) {
         for (File fileEntry : folder.listFiles()) {
             if (fileEntry.isDirectory()) {

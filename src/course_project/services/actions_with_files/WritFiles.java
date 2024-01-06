@@ -11,8 +11,10 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Date;
 
+/**
+ * метод записи в фаил statistics
+ */
 public class WritFiles {
-    //метод записи в фаил statistics
     public static void writingFiles (){
         try {
             String message = "- total turnover for the year: " + RemoveExtraZeros.TWO_CHARACTERS_AFTER_DOT(Variables.getSumOrder() + Variables.getSumBill() + Variables.getSumInvoice()) + "\n" +

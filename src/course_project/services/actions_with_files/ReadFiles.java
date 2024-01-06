@@ -6,8 +6,12 @@ import course_project.services.validition.ValidatingStringToNumber;
 import java.io.*;
 import java.util.Date;
 
+/**
+ * метод считывает строки в файле
+ * и отправляет их на проверку,
+ * возвращется число
+ */
 public class ReadFiles {
-    //метод считывает строки в файле и отправляет их на проверку, возвращется число
     public static double readingFiles(String path){
         try(BufferedReader reader = new BufferedReader(new FileReader(path))){
             double sum = 0;

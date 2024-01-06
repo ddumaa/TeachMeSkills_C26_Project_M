@@ -4,8 +4,11 @@ import course_project.packages.logger.Logging;
 
 import java.util.Date;
 
+/**
+ * Метод поиска и возврата суммы в строке
+ */
 public class NumberSearch {
-    //метод поиска и возврата суммы в строке
+
     public static double searchAmount (String line){
         StringBuilder number = new StringBuilder();
         boolean decimalPointFound = false;

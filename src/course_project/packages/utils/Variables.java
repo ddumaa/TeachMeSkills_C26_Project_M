@@ -1,5 +1,8 @@
 package course_project.packages.utils;
 
+/**
+ * Переменные для подсчёта оборота
+ */
 public class Variables {
     private static double sumOrder = 0;
     private static double sumInvoice = 0;

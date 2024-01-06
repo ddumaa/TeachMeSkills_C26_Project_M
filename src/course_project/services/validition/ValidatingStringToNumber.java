@@ -6,11 +6,14 @@ import course_project.services.finding_number_in_string.NumberSearch;
 
 import java.util.Date;
 
+/**
+ *     Проверка содержит ли строка сумму и её валюту,
+ *     вызов метода получения числа из строки,
+ *     вызов конвертации,
+ *     возврат значения.
+ */
 public class ValidatingStringToNumber {
-    //Проверка содержит ли строка сумму и её валюту,
-    // вызов метода получения числа из строки,
-    // вызов конвертации,
-    // возврат значения.
+
     public static double checkingLineForAmountAndCurrency (String line){
         if (line.toLowerCase().contains("total")){
             Logging.EXECUTION_LOG(new Date(),"Line with amount found\n");

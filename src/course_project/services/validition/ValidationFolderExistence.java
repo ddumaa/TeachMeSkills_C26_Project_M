@@ -10,8 +10,12 @@ import java.nio.file.Paths;
 import java.util.Date;
 import java.util.Scanner;
 
+/**
+ * метод получения пути к папке
+ * проверке его на существование и передачи его на считывание
+ */
 public class ValidationFolderExistence {
-    //метод получения пути к папке, проверке его на существование и передачи его на считывание
+
     public static void checkPath() {
         while (true) {
             Scanner scanner = new Scanner(System.in);

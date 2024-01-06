@@ -1,5 +1,8 @@
 package course_project.packages.utils;
 
+/**
+ * Хранение констант
+ */
 public interface Consts {
 
     //Пути к логам
