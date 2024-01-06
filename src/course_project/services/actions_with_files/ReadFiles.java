@@ -21,8 +21,10 @@ public class ReadFiles {
             return sum;
         } catch (FileNotFoundException e) {
             Logging.ERROR_LOG(new Date(), e.getMessage());
+            System.out.println("An error occurred reading the file, check if the file exists and try again.");
         } catch (IOException e) {
             Logging.ERROR_LOG(new Date(), e.getMessage());
+            System.out.println("An error occurred while writing to the file, check if the file exists and try again.");
         }
         return 0;
     }

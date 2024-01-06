@@ -27,7 +27,7 @@ public class ValidationFolderExistence {
                 break;
             } else {
                 System.out.println("invalid folder path\n");
-                Logging.EXECUTION_LOG(new Date(), "Invalid folder path: " + pathFolder + "\n");
+                Logging.ERROR_LOG(new Date(), "Invalid folder path: " + pathFolder + "\n");
             }
         }
     }
