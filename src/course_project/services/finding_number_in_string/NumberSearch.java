@@ -5,7 +5,7 @@ import course_project.packages.logger.Logging;
 import java.util.Date;
 
 /**
- * Метод поиска и возврата суммы в строке
+ * Метод поиска и возврата числа из строки в double
  */
 public class NumberSearch {
 
