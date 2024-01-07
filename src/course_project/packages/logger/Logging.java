@@ -17,10 +17,18 @@ public class Logging {
             //do nothing;
         }
     }
-    public static void ERROR_LOG(Date date, String errorMessage){
+    public static void ERROR_LOG(Date date, String errorMessage, Exception exception){
         try {
-            String message = date +  " -> " + errorMessage;
-            Files.write(Paths.get(Consts.ERROR_LOG_FILE), message.getBytes(), StandardOpenOption.APPEND);
+            StringBuilder sb = new StringBuilder();
+            sb.append(date + " -> " + errorMessage + "\n");
+
+            StackTraceElement[] traceElements = exception.getStackTrace();
+            for(StackTraceElement element: traceElements){
+                sb.append(element.toString());
+                sb.append("\n");
+            }
+
+            Files.write(Paths.get(Consts.ERROR_LOG_FILE), sb.toString().getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             //do nothing;
         }

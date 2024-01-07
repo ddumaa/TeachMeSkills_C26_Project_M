@@ -37,7 +37,7 @@ public class ValidationNameFiles {
                 Path destinationPath = new File(destinationFolder, sourceFile.getName()).toPath();
                 Files.move(sourcePath, destinationPath);
             } catch (IOException e) {
-                Logging.ERROR_LOG(new Date(),"Error moving file" + nameFile + "\n");
+                Logging.ERROR_LOG(new Date(),"Error moving file" + nameFile + "\n", e);
                 System.out.println("Error moving file, try again.");
             }
             }
@@ -50,7 +50,7 @@ public class ValidationNameFiles {
                 Path destinationPath = new File(destinationFolder, sourceFile.getName()).toPath();
                 Files.move(sourcePath, destinationPath);
             } catch (IOException e) {
-                Logging.ERROR_LOG(new Date(),"Error moving file" + nameFile + "\n");
+                Logging.ERROR_LOG(new Date(),"Error moving file" + nameFile + "\n", e);
                 System.out.println("Error moving file, try again.");
             }
         }

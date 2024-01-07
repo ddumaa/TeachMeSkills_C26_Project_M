@@ -24,7 +24,7 @@ public class WritFiles {
             Files.write(Paths.get(Consts.STATISTIC_WRIT_PATH), message.getBytes(), StandardOpenOption.WRITE);
             Logging.EXECUTION_LOG(new Date(),"Statistics are written to a file along the path ->\n" + Consts.STATISTIC_WRIT_PATH + "\n");
         } catch (IOException e) {
-            Logging.ERROR_LOG(new Date(), e.getMessage());
+            Logging.ERROR_LOG(new Date(), e.getMessage(), e);
             System.out.println("An error occurred while writing to the file, check if the file exists and try again.");
         }
     }
