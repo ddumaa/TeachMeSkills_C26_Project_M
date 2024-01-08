@@ -4,6 +4,7 @@ TeachMeSkills_C26_Project_M
 This repository contains a course project (a program for processing financial documents).
 
 The project aims to create a program for processing payment documents and generating financial reports. 
+
 To access the program, user authentication using a login and password is required. 
 The program is designed to process three types of financial documents: invoices, orders and checks, all of them in text format (txt). 
 The main purpose is to read information from these documents, compile statistics and provide a comprehensive financial overview.
