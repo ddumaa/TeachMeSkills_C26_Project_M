@@ -43,25 +43,19 @@ public class Session {
 
     //Method for checking active session
     public static boolean isSessionAlive() {
-        try {
-            if (getAccessToken().length() == 16 && getExpDate().after(new Date())) {
-                return true;
-            } else {
-                Logging.EXECUTION_LOG(new Date(), "Session ended." + "\n");
-                return false;
-            }
-        } catch (NullPointerException e){
-            System.out.println("123");
-            Logging.ERROR_LOG(new Date(), e.getMessage(), e);
+        if (getAccessToken().length() == 16 && getExpDate().after(new Date())) {
+            return true;
+        } else {
+            Logging.EXECUTION_LOG(new Date(), "Session ended." + "\n");
+            return false;
         }
-        return false;
     }
 
-    public static String getAccessToken() {
+    public static String getAccessToken () {
         return accessToken;
     }
 
-    public static Date getExpDate() {
+    public static Date getExpDate () {
         return expDate;
     }
 
