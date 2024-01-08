@@ -23,22 +23,20 @@ public class Session {
     }
 
     //Method that generates an access token
-    private static boolean setAccessToken() {
+    private static void setAccessToken() {
         String symbols = "abcdefghijklmnopqrstuvwxyz0123456789";
         accessToken = new Random().ints(16, 0, symbols.length())
                 .mapToObj(symbols::charAt)
                 .map(Object::toString)
                 .collect(Collectors.joining());
-        return true;
     }
 
     //Method that sets the session timer
-    private static boolean setExpDate() {
+    private static void setExpDate() {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         calendar.add(Calendar.MINUTE, 10);
         expDate = calendar.getTime();
-        return true;
     }
 
     //Method for checking active session
