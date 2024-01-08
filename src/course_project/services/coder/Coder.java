@@ -10,37 +10,27 @@ public class Coder {
     //Method to encrypt sensitive user information using Base64 class
     public static String code(String input){
 
-
         String encodedString = Base64.getEncoder().encodeToString(input.getBytes());
         String result = addSalt(encodedString);
-        return result;
+        return encodedString;
 
     }
 
     //Method to decrypt sensitive user information using Base64 class
     public static String decode(String input){
 
-        byte[] decodedBytes = Base64.getDecoder().decode(input);
+        String deSalt = dellSalt(input);
 
-        if (decodedBytes.length >= 20){
+        byte[] decodedBytes = Base64.getDecoder().decode(deSalt);
 
-            decodedBytes = Arrays.copyOfRange(decodedBytes, 10, decodedBytes.length - 10);
-
-        } else {
-
-            System.out.println("The entered data cannot be encoded due to insufficient bytes.");
-
-        }
-
-        String decoded = new String(decodedBytes);
-        return decoded;
+        return new String(decodedBytes);
 
     }
 
     //A method that enhances the security of encrypted sensitive user information
     private static String addSalt(String input){
 
-        String symbols = "abcdefghijklmnopqrstuvwxyz0123456789";
+        String symbols = "abcdefghijklmnopqrstuvwxyzQWERTYUIOPASDFGHJKLZXCVBNM0123456789";
         String salt = new Random().ints(10, 0, symbols.length())
                                        .mapToObj(symbols::charAt)
                                        .map(Object::toString)
@@ -49,6 +39,10 @@ public class Coder {
         String result = salt + input + salt;
         return result;
 
+    }
+
+    public static String dellSalt(String input){
+        return input.substring(10, input.length()-10);
     }
 
 }
