@@ -30,7 +30,6 @@ public class Launcher {
         } else {
             Logging.EXECUTION_LOG(new Date(), "No session");
         }
-
         Logging.EXECUTION_LOG(new Date(), "Program end\n");
     }
 }
