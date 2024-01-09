@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-
 public class Session {
     private static String accessToken;
     private static Date expDate;

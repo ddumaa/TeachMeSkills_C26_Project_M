@@ -3,7 +3,6 @@ package course_project.services.coder;
 import java.util.Base64;
 import java.util.Random;
 import java.util.stream.Collectors;
-import java.util.Arrays;
 
 public class Coder {
 

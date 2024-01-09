@@ -8,8 +8,6 @@ import course_project.storage.StorageMock;
 import java.util.Date;
 import java.util.Scanner;
 
-import static course_project.packages.logger.Logging.EXECUTION_LOG;
-
 /**Class that compares user input
  * with the data in our database and determining
  * start a new session or not
