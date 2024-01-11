@@ -8,9 +8,10 @@ import course_project.storage.StorageMock;
 import java.util.Date;
 import java.util.Scanner;
 
-/**Class that compares user input
- * with the data in our database and determining
- * start a new session or not
+/**
+ *  Class that compares user input
+ *  with the data in our database and determining
+ *  start a new session or not
  */
 
 public class Authorisation {

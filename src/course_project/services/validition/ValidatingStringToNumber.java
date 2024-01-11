@@ -7,10 +7,10 @@ import course_project.services.finding_number_in_string.NumberSearch;
 import java.util.Date;
 
 /**
- *     Проверка содержит ли строка сумму и её валюту,
- *     вызов метода получения числа из строки,
- *     вызов конвертации,
- *     возврат значения.
+ *    Checking whether the line contains the amount and its currency,
+ *    calling a method for getting a number from a string,
+ *    call conversion,
+ *    return value.
  */
 public class ValidatingStringToNumber {
 

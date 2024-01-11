@@ -5,7 +5,7 @@ import course_project.packages.logger.Logging;
 import java.util.Date;
 
 /**
- * Конвертер валют
+ * Currency Converter
  */
 public class CurrencyConverter {
     public static double convertCurrency(String currency, double value){

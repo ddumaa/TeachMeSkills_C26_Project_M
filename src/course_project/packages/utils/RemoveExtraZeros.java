@@ -1,7 +1,7 @@
 package course_project.packages.utils;
 
 /**
- * Оставляем не более двух знаков после точки.
+ *   Leave no more than two characters after the period.
  */
 public class RemoveExtraZeros {
     public static double TWO_CHARACTERS_AFTER_DOT(double value){

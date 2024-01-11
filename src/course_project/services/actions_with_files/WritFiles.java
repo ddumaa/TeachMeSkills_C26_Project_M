@@ -12,7 +12,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.Date;
 
 /**
- * метод записи в фаил statistics
+ *   Method for writing to the statistics file
  */
 public class WritFiles {
     public static void writingFiles (){

@@ -5,7 +5,7 @@ import course_project.packages.logger.Logging;
 import java.util.Date;
 
 /**
- * Метод поиска и возврата числа из строки в double
+ * Method for finding and returning a number from a string to double
  */
 public class NumberSearch {
 

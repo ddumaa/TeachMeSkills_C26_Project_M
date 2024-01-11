@@ -1,7 +1,7 @@
 package course_project.packages.utils;
 
 /**
- * Хранение констант
+ *   Storing constants
  */
 public interface Consts {
 

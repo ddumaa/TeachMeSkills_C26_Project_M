@@ -7,9 +7,9 @@ import java.io.*;
 import java.util.Date;
 
 /**
- * метод считывает строки в файле
- * и отправляет их на проверку,
- * возвращется число
+ *   Method reads lines in a file
+ *   and sends them for verification,
+ *   will return a number
  */
 public class ReadFiles {
     public static double readingFiles(String path){

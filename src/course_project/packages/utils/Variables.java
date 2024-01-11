@@ -1,7 +1,7 @@
 package course_project.packages.utils;
 
 /**
- * Переменные для подсчёта оборота
+ *   Variables for calculating turnover
  */
 public class Variables {
     private static double sumOrder = 0;

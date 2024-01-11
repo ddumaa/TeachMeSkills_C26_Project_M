@@ -12,10 +12,10 @@ import java.nio.file.Path;
 import java.util.Date;
 
 /**
- * Метод проверки формата файла и фильтр на год документа,
- *     определение типа документа,
- *     получение суммы и запись суммы.
- *     Пермещение невалидных документов.
+ *    Method for checking the file format and filter for the year of the document,
+ *    document type determination,
+ *    receiving the amount and recording the amount.
+ *    Moving invalid documents.
  */
 public class ValidationNameFiles {
     public static void validatingNameDocuments (String nameFile, String path) {

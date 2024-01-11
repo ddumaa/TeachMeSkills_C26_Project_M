@@ -8,6 +8,10 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Date;
 
+/**
+ *   Logging Methods
+ */
+
 public class Logging {
     public static void EXECUTION_LOG(Date date, String infoMessage){
         try {

@@ -5,7 +5,7 @@ import course_project.services.validition.ValidationNameFiles;
 import java.io.File;
 
 /**
- * Метод перебора папок для поиска файлов и передачи их дальше
+ *   Method of iterating through folders to find files and transfer them further
  */
 public class FileParsing {
     public static void listFilesForFolder(File folder) {

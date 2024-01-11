@@ -11,8 +11,8 @@ import java.util.Date;
 import java.util.Scanner;
 
 /**
- * метод получения пути к папке
- * проверке его на существование и передачи его на считывание
+ *   Method for getting folder path
+ *   checking it for existence and transmitting it for reading
  */
 public class ValidationFolderExistence {
 
