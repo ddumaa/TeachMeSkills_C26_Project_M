@@ -17,10 +17,11 @@ import java.util.Date;
 public class Launcher {
     public static void startProgram () {
         Logging.EXECUTION_LOG(new Date(), "Program launch\n");
+        Session session = new Session();
 
-        Session session = Authorisation.doLogin();
-        if (session != null) {
-            if (Session.isSessionAlive()) {
+        Session sessionOn = Authorisation.doLogin();
+        if (sessionOn != null) {
+            if (session.isSessionAlive()) {
                 ValidationFolderExistence.checkPath();
                 WritFiles.writingFiles();
             } else {

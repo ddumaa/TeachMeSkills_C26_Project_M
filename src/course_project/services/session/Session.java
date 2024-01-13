@@ -8,8 +8,8 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Session {
-    private static String accessToken;
-    private static Date expDate;
+    private  String accessToken;
+    private  Date expDate;
 
     //Method that initializes the start of a session
     public Session() {
@@ -22,16 +22,16 @@ public class Session {
     }
 
     //Method that generates an access token
-    private static void setAccessToken() {
+    private  void setAccessToken() {
         String symbols = "abcdefghijklmnopqrstuvwxyz0123456789";
-        accessToken = new Random().ints(16, 0, symbols.length())
+        this.accessToken = new Random().ints(16, 0, symbols.length())
                 .mapToObj(symbols::charAt)
                 .map(Object::toString)
                 .collect(Collectors.joining());
     }
 
     //Method that sets the session timer
-    private static void setExpDate() {
+    private  void setExpDate() {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         calendar.add(Calendar.MINUTE, 10);
@@ -39,7 +39,7 @@ public class Session {
     }
 
     //Method for checking active session
-    public static boolean isSessionAlive() {
+    public boolean isSessionAlive() {
         if (getAccessToken().length() == 16 && getExpDate().after(new Date())) {
             return true;
         } else {
@@ -48,11 +48,11 @@ public class Session {
         }
     }
 
-    public static String getAccessToken () {
+    public  String getAccessToken() {
         return accessToken;
     }
 
-    public static Date getExpDate () {
+    public  Date getExpDate () {
         return expDate;
     }
 
