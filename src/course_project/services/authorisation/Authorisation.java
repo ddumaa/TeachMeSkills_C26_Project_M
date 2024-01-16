@@ -1,6 +1,6 @@
 package course_project.services.authorisation;
 
-import course_project.packages.logger.Logging;
+import course_project.packages.do_log.Logging;
 import course_project.services.coder.Coder;
 import course_project.services.session.Session;
 import course_project.storage.StorageMock;

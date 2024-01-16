@@ -1,7 +1,7 @@
 package course_project.launch;
 
-import course_project.packages.logger.Logging;
-import course_project.services.actions_with_files.WritFiles;
+import course_project.packages.do_log.Logging;
+import course_project.services.actions_with_files.WriteFiles;
 import course_project.services.authorisation.Authorisation;
 import course_project.services.session.Session;
 import course_project.services.validition.ValidationFolderExistence;
@@ -23,7 +23,7 @@ public class Launcher {
         if (sessionOn != null) {
             if (session.isSessionAlive()) {
                 ValidationFolderExistence.checkPath();
-                WritFiles.writingFiles();
+                WriteFiles.writingFiles();
             } else {
                 System.out.println("Session timed out");
                 Logging.EXECUTION_LOG(new Date(), "Session timed out");

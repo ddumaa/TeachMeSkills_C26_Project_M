@@ -1,4 +1,4 @@
-package course_project.packages.logger;
+package course_project.packages.do_log;
 
 import course_project.packages.utils.Consts;
 

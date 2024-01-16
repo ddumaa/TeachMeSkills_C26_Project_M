@@ -1,6 +1,6 @@
 package course_project.services.actions_with_files;
 
-import course_project.packages.logger.Logging;
+import course_project.packages.do_log.Logging;
 import course_project.packages.utils.Consts;
 import course_project.packages.utils.RemoveExtraZeros;
 import course_project.packages.utils.Variables;
@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  *   Method for writing to the statistics file
  */
-public class WritFiles {
+public class WriteFiles {
     public static void writingFiles (){
         try {
             String message = "- total turnover for the year: " + RemoveExtraZeros.TWO_CHARACTERS_AFTER_DOT(Variables.getSumOrder() + Variables.getSumBill() + Variables.getSumInvoice()) + "\n" +

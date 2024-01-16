@@ -1,6 +1,6 @@
 package course_project.services.session;
 
-import course_project.packages.logger.Logging;
+import course_project.packages.do_log.Logging;
 
 import java.util.Calendar;
 import java.util.Date;

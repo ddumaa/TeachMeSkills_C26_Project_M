@@ -1,6 +1,6 @@
 package course_project.services.currency_converter;
 
-import course_project.packages.logger.Logging;
+import course_project.packages.do_log.Logging;
 
 import java.util.Date;
 
